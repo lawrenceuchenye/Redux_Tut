@@ -15,6 +15,13 @@ const Home=()=>{
             type:"DEC",
         });
     }
+     
+    const addBy=()=>{
+        dispatch({
+            type:"ADD",
+            payload:10
+        });
+    }
 
     return(
         <div>
@@ -24,6 +31,7 @@ const Home=()=>{
           <div>
               <button onClick={()=>increment()}>+</button>
                <button onClick={()=>decrement()}>-</button>
+               <button onClick={()=>addBy()}>Add by 10</button>
              </div>
         </div>
     );
