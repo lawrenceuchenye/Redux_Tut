@@ -1,10 +1,30 @@
-import { useSelector } from "react-redux"
+import { useSelector,useDispatch } from "react-redux"
 
 const Home=()=>{
     const counter=useSelector((state)=>state.counter);
+    const dispatch=useDispatch();
+
+    const increment=()=>{
+        dispatch({
+            type:"INC"
+        });
+    }
+
+    const decrement=()=>{
+        dispatch({
+            type:"DEC",
+        });
+    }
+
     return(
         <div>
-           <h1>Yo! {counter} </h1>
+          <div>
+             <h1>Yo! {counter} </h1>
+            </div>
+          <div>
+              <button onClick={()=>increment()}>+</button>
+               <button onClick={()=>decrement()}>-</button>
+             </div>
         </div>
     );
 }
