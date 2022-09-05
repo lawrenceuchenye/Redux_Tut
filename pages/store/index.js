@@ -1,4 +1,3 @@
-import { createStore } from "redux"
 
 const reducer=(state={ counter:10 },action)=>{
     switch(action.type){
@@ -15,12 +14,14 @@ const reducer=(state={ counter:10 },action)=>{
 };
 
 export default reducer;
-/*
+
+
 import { configureStore,createSlice } from "@reduxjs/toolkit";
 
-const storeSlice=configurSlice({
+
+const storeSlice=createSlice({
     name:"counter",
-    initialState={counter:0},
+    initialState:{counter:10},
     reducer:{
         increment(state,actions){
            state.counter+=1;
@@ -40,8 +41,9 @@ const storeConfig=configureStore({
     reducer:storeSlice.reducer
 });
 
-export const actions=storeConfig.actions;
+console.log(storeConfig.actions);
 
-export default storeConfig;
+const actions=storeConfig.actions;
 
-*/
+export { storeConfig ,actions }
+
