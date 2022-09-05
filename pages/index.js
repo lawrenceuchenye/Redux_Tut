@@ -4,22 +4,17 @@ import { actions } from "./store"
 const Home=()=>{
    const counter=useSelector((state)=>state.counter);
     const dispatch=useDispatch();
-
+     console.log(actions.increment());
     const increment=()=>{
         dispatch(actions.increment());
     }
 
     const decrement=()=>{
-        dispatch({
-            type:"DEC",
-        });
+        dispatch(actions.decrement());
     }
      
     const addBy=()=>{
-        dispatch({
-            type:"ADD",
-            payload:10
-        });
+        dispatch(actions.addBy(10));
     }
 
     return(

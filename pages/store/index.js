@@ -22,15 +22,15 @@ import { configureStore,createSlice } from "@reduxjs/toolkit";
 const storeSlice=createSlice({
     name:"counter",
     initialState:{counter:10},
-    reducer:{
-        increment(state,actions){
+    reducers:{
+        increment(state,action){
            state.counter+=1;
         },
-        decrement(state,actions){
+        decrement(state,action){
             state.counter-=1;
         },
-        addBy(state,actions){
-            state.counter+=actions.payload;
+        addBy(state,action){
+            state.counter+=action.payload;
         }
 
     }
@@ -41,9 +41,7 @@ const storeConfig=configureStore({
     reducer:storeSlice.reducer
 });
 
-console.log(storeConfig.actions);
-
-const actions=storeConfig.actions;
+const actions=storeSlice.actions;
 
 export { storeConfig ,actions }
 
